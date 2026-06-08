@@ -1,14 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        maven 'Maven'
+    }
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/sam8389/QA-Jenkins-Email-Project.git'
-            }
-        }
+    stages {
 
         stage('Build and Test') {
             steps {
