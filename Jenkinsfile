@@ -1,11 +1,19 @@
 pipeline {
     agent any
 
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing Email'
+            }
+        }
+    }
+
     post {
         always {
             emailext(
                 subject: "Jenkins Email Test",
-                body: "Congratulations! Jenkins email notifications are working.",
+                body: "Email notification is working successfully.",
                 to: "samatgworld@gmail.com"
             )
         }
